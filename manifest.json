@@ -18,11 +18,6 @@
     "page": "html/zhihu.html"
     //"scripts": ["js/background.js"]
   },
-  // 覆盖浏览器默认页面
-  //  "chrome_url_overrides": {
-  //    // 覆盖浏览器默认的新标签页
-  //    "newtab": "zhihu.html"
-  //  },
   "content_scripts": [
     {
       "matches": ["https://www.zhihu.com/question/*"],
@@ -44,11 +39,4 @@
     "js/inject.js",
     "img/ic_launcher.png"
   ]
-  // Chrome40以后的插件配置页写法，如果2个都写，新版Chrome只认后面这一个
-  // 点击选项出现的页面
-//  "options_ui": {
-//    "page": "popup.html",
-//    // 添加一些默认的样式，推荐使用
-//    "chrome_style": true
-//  }
 }

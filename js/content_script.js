@@ -18,10 +18,10 @@ node.appendChild(img)
 document.body.appendChild(node)
 
 
-let node2 = document.createElement("div")
-node2.innerHTML = div_str
-node2.getElementsByClassName("zhihu-image")[0].hidden = true
-document.body.appendChild(node2)
+let imageNode = document.createElement("div")
+imageNode.innerHTML = div_str
+imageNode.getElementsByClassName("zhihu-image")[0].hidden = true
+document.body.appendChild(imageNode)
 
 
 const loadImg = () => {
@@ -34,7 +34,6 @@ const loadImg = () => {
         images = document.querySelectorAll("span > figure > span > div")
         console.log(images)
         for(i = 0; i < images.length; i++) {
-            // console.log(images[i].dataset.src)
             let img = document.createElement("img")
             img.src = images[i].dataset.src
             img.className = "image"
@@ -44,5 +43,4 @@ const loadImg = () => {
         nodeHidden.hidden = true
 
     }
-
 }
