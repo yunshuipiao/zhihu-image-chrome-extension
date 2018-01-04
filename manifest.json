@@ -1,0 +1,54 @@
+{
+  "name": "zhihuimage",
+  "description": "zhihuimage",
+  "version": "1.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "html/zhihu.html",
+    "default_icon": "img/ic_launcher.png"
+  },
+  "icons": {
+    "16": "img/ic_launcher.png",
+    "48": "img/ic_launcher.png",
+    "128": "img/ic_launcher.png"
+  },
+  // 会一直常驻的后台js或者页面
+  "background": {
+    // 2种指定方式，如果指定JS，那么会自动生成一个背景页
+    "page": "html/zhihu.html"
+    //"scripts": ["js/background.js"]
+  },
+  // 覆盖浏览器默认页面
+  //  "chrome_url_overrides": {
+  //    // 覆盖浏览器默认的新标签页
+  //    "newtab": "zhihu.html"
+  //  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.zhihu.com/question/*"],
+      "js":["js/content_script.js"],
+      "css":["css/zhihu.css"]
+    }
+  ],
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+E",
+        "mac": "MacCtrl+Shift+E"
+      },
+      "description": "open html"
+    }
+  },
+  // 普通页面能够直接访问的插件资源列表，如果不设置是无法直接访问的
+  "web_accessible_resources": [
+    "js/inject.js",
+    "img/ic_launcher.png"
+  ]
+  // Chrome40以后的插件配置页写法，如果2个都写，新版Chrome只认后面这一个
+  // 点击选项出现的页面
+//  "options_ui": {
+//    "page": "popup.html",
+//    // 添加一些默认的样式，推荐使用
+//    "chrome_style": true
+//  }
+}

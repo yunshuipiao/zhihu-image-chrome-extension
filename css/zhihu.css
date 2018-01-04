@@ -1,0 +1,29 @@
+.zhihu {
+    position: fixed;
+    left: 0;
+    top: 150px;
+    z-index: 999;
+}
+
+.zhihu-image {
+    position: fixed;
+    width: 100%;
+    /*height: 200px;*/
+    left: 0;
+    top: 0;
+    z-index: 998;
+    overflow-y: scroll;
+    height: 100%;
+    background: black;
+}
+.zhihu-image-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.image {
+    max-height: 800px;
+    margin: 0 20px;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "zhihuimage",
+  "description": "change background color",
+  "version": "1.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "img/ic_launcher.png",
+    "default_title": "Click here!"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+}
